@@ -6,6 +6,9 @@ function Stack() {
     this.pop;
     this.push;
     this.peek;
+    this.isEmpty;
+    this.size;
+    this.clear;
 }
 
 Stack.prototype.push = function (elem) {
@@ -28,6 +31,19 @@ Stack.prototype.pop = function () {
 
 Stack.prototype.peek = function () {
     return this.dataStore[this._top];
+};
+
+Stack.prototype.size = function () {
+    return this._top + 1;
+};
+
+Stack.prototype.isEmpty = function () {
+    return this.size() === 0 ? true : false;
+};
+
+Stack.prototype.clear = function () {
+    this.dataStore = [];
+    this._top = -1;
 };
 
 Stack.prototype.printStack = function () {

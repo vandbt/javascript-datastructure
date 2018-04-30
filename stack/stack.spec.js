@@ -68,7 +68,7 @@ describe('Stack', function () {
         it('should return 1 when stack has one item', function () {
             myStack = new Stack();
             myStack.push(0);
-            assert.equal(myStack.size(), false);
+            assert.equal(myStack.size(), 1);
         });
         
     });
