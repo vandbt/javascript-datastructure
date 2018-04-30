@@ -1,0 +1,25 @@
+{
+  "name": "javascript-datastructure",
+  "version": "1.0.0",
+  "description": "javascript data structure",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha **/**.spec.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vandbt/javascript-datastructure.git"
+  },
+  "keywords": [
+    "datastructure"
+  ],
+  "author": "vandbt",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vandbt/javascript-datastructure/issues"
+  },
+  "homepage": "https://github.com/vandbt/javascript-datastructure#readme",
+  "devDependencies": {
+    "mocha": "^5.1.1"
+  }
+}
