@@ -22,21 +22,49 @@ describe('Queue', function () {
                 myQueue.enqueue(elem);
             }
 
-            assert.equal(myQueue.front(), 9);
+            assert.equal(myQueue.front(), 0);
         });
     });
 
     describe('#dequeue()', function () {
 
-        it('should throws Error [Queue overflow] when dequeue empty queue', function () {
+        it('should throws Error [Queue is empty.] when dequeue empty queue', function () {
             myQueue = new Queue();
-            assert.throws(myQueue.dequeue, Error, 'Queue overflow');
+            assert.throws(myQueue.dequeue, Error, 'Queue is empty.');
         });
 
         it('should dequeue return dequeueTest when the dequeueTest enqueueed', function () {
             myQueue = new Queue();
             myQueue.enqueue('dequeueTest');
             assert.equal(myQueue.dequeue(), 'dequeueTest');
+        });
+
+        describe('#dequeue(): The quick brown fox', function () {
+            // Creates and initializes a new Queue.
+            before(function () {
+                myQueue = new Queue();
+                myQueue.enqueue("The");
+                myQueue.enqueue("quick");
+                myQueue.enqueue("brown");
+                myQueue.enqueue("fox");
+            });
+
+            it('should dequeue return [The] when dequeueed', function (done) {
+                assert.equal(myQueue.dequeue(), 'The');
+                done();
+            });
+            it('should dequeue return [quick] when dequeueed', function (done) {
+                assert.equal(myQueue.dequeue(), 'quick');
+                done();
+            });
+            it('should dequeue return [brown] when dequeueed', function (done) {
+                assert.equal(myQueue.dequeue(), 'brown');
+                done();
+            });
+            it('should dequeue return [fox] when dequeueed', function (done) {
+                assert.equal(myQueue.dequeue(), 'fox');
+                done();
+            });
         });
 
     });

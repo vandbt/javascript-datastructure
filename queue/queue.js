@@ -1,5 +1,5 @@
 function Queue() {
-    var items = [];
+    this.items = [];
     this.enqueue;
     this.dequeue;
     this.front;
@@ -9,22 +9,38 @@ function Queue() {
 }
 
 Queue.prototype.enqueue = function (element) {
-  throw 'Not implemented.';  
+    this.items.push(element);
 };
+
 Queue.prototype.dequeue = function () {
-  throw 'Not implemented.';  
+    if (this.isEmpty()) {
+        throw 'Queue is empty.';
+    } else {
+        // NOTE: does not use Array built in method shift/unshift becuase that works like queue.
+        return this.items.splice(0, 1);
+    }
 };
+
 Queue.prototype.front = function () {
-  throw 'Not implemented.';  
+    if (this.isEmpty()) {
+        throw 'Queue is empty.';
+    } else {
+        return this.items[0];
+    }
 };
+
 Queue.prototype.size = function () {
-  throw 'Not implemented.';  
+    return this.items.length;
 };
+
 Queue.prototype.isEmpty = function () {
-  throw 'Not implemented.';  
+    return this.size() === 0 ? true : false;
 };
+
 Queue.prototype.clear = function () {
-  throw 'Not implemented.';  
+    if (!this.isEmpty()) {
+        this.items = [];
+    }
 };
 
 
