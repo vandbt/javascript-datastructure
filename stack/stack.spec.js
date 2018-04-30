@@ -41,4 +41,55 @@ describe('Stack', function () {
         });
         
     });
+
+
+    describe('#isEmpty()', function () {
+
+        it('should return true when stack is empty', function () {
+            myStack = new Stack();
+            assert.equal(myStack.isEmpty(), true);
+        });
+
+        it('should return false when stack is not empty', function () {
+            myStack = new Stack();
+            myStack.push(0);
+            assert.equal(myStack.isEmpty(), false);
+        });
+        
+    });
+
+    describe('#size()', function () {
+
+        it('should return 0 when stack is empty', function () {
+            myStack = new Stack();
+            assert.equal(myStack.size(), 0);
+        });
+
+        it('should return 1 when stack has one item', function () {
+            myStack = new Stack();
+            myStack.push(0);
+            assert.equal(myStack.size(), false);
+        });
+        
+    });
+
+    describe('#clear()', function () {
+
+        it('should return true when stack called clear', function () {
+            myStack = new Stack();
+            myStack.push(0);
+            myStack.clear();
+            assert.equal(myStack.isEmpty(), true);
+        });
+
+        it('should return size 0 when stack called clear', function () {
+            myStack = new Stack();
+            myStack.push(0);
+            myStack.clear();
+            assert.equal(myStack.size(), 0);
+        });
+        
+    });
+
+
 });
